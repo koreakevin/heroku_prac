@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'j_x85mym$al%+!ez!z%pm9*8=rv&8vb24%8^*5wj8@a%&_kfm4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANCO_DEBUG', True))
+DEBUG = bool( os.environ.get('DJANCO_DEBUG', True) )
 
 ALLOWED_HOSTS = ['*']
 
@@ -133,5 +133,5 @@ STATICFILES_DIRS = (
 STATIC_URL = '/static/'
 
 import dj_datebase_url
-db_from_env = dj_datebase_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
